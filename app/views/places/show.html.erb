@@ -2,10 +2,15 @@
 <%# I can't seem to get the Place Name to Populate %>
 <h1> <%=@place["name"] %> </h1>
 
-<h3> Posts </h3>
+<h2> Posts </h2>
+
+<%for post in @posts%>
 
 
-
+<h3> <%= post["title"]%> </h3>
+<p> <%= post["posted_on"]%></p>
+<p> <%= post["description"]%></p>
+<%end%>
 
 <p>
 <a href ="/posts/new?place_id=<%= @place["id"]%>

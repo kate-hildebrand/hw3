@@ -7,7 +7,7 @@ class PlacesController < ApplicationController
     def show
         @place = Place.find_by({ "id" => params["id"] })
         #need to figure out why the below code line is failing 
-        #@posts = Post.where({"post_id" => @post["id"]})
+        @posts = Post.where({"place_id" => @place["id"]})
     end
 
     def new

@@ -1,8 +1,5 @@
 class PostsController < ApplicationController
 
-    def show
-        @post = Post.find_by({"post_id" => params["id"]})
-        @place = Place.find_by({"id" => @place["place_id"]})
 
     def new
         @post =Post.new
@@ -20,5 +17,5 @@ class PostsController < ApplicationController
         @post.save
         redirect_to "/places/#{@post["place_id"]}"
     end
-end 
+ 
 end
